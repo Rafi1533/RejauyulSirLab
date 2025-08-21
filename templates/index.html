@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteoporosis Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3c7d6, #e2eaf4); /* Light blue gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            max-height: 700px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333; /* Dark grey text for the header */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444444; /* Dark grey for labels */
+        }
+
+        select, input[type="number"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Light grey border */
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        select {
+            height: 40px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #ff6600; /* Orange color for button */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: center;
+        }
+
+        button:hover {
+            background-color: #e65c00; /* Darker orange on hover */
+        }
+
+        /* Responsive Design for small screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 100%;
+                max-width: 90%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Osteoporosis Prediction Form</h1>
+        <form action="/predict" method="POST">
+            <!-- Age -->
+            <label for="feature1">Age:</label>
+            <input type="number" id="feature1" name="feature1" required><br>
+
+            <!-- Gender -->
+            <label for="feature2">Gender:</label>
+            <select id="feature2" name="feature2" required>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select><br>
+
+            <!-- Hormonal Changes -->
+            <label for="feature3">Hormonal Changes:</label>
+            <select id="feature3" name="feature3" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Family History -->
+            <label for="feature4">Family History:</label>
+            <select id="feature4" name="feature4" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Race/Ethnicity -->
+            <label for="feature5">Race/Ethnicity:</label>
+            <select id="feature5" name="feature5" required>
+                <option value="1">Caucasian</option>
+                <option value="2">African American</option>
+                <option value="3">Asian</option>
+                <option value="4">Hispanic</option>
+            </select><br>
+
+            <!-- Body Weight -->
+            <label for="feature6">Body Weight (kg):</label>
+            <input type="number" id="feature6" name="feature6" required><br>
+
+            <!-- Calcium Intake -->
+            <label for="feature7">Calcium Intake (mg):</label>
+            <input type="number" id="feature7" name="feature7" required><br>
+
+            <!-- Vitamin D Intake -->
+            <label for="feature8">Vitamin D Intake (IU):</label>
+            <input type="number" id="feature8" name="feature8" required><br>
+
+            <!-- Physical Activity -->
+            <label for="feature9">Physical Activity:</label>
+            <select id="feature9" name="feature9" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Smoking -->
+            <label for="feature10">Smoking:</label>
+            <select id="feature10" name="feature10" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Alcohol Consumption -->
+            <label for="feature11">Alcohol Consumption:</label>
+            <select id="feature11" name="feature11" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Medical Conditions -->
+            <label for="feature12">Medical Conditions:</label>
+            <select id="feature12" name="feature12" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Medications -->
+            <label for="feature13">Medications:</label>
+            <select id="feature13" name="feature13" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <!-- Prior Fractures -->
+            <label for="feature14">Prior Fractures:</label>
+            <select id="feature14" name="feature14" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
